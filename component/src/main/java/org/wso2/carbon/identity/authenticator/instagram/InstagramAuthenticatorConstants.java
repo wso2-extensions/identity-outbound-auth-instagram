@@ -32,4 +32,5 @@ public class InstagramAuthenticatorConstants {
     public static final String INSTAGRAM_USERNAME = "username";
     public static final String INSTAGRAM_USER = "user";
     public static final String INSTAGRAM_BASIC_SCOPE = "basic";
+    public static final String CLAIM_DIALECT_URI = "http://wso2.org/instagram/claims";
 }

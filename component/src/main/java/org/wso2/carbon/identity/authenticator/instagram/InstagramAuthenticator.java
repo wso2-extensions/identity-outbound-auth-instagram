@@ -216,7 +216,9 @@ public class InstagramAuthenticator extends OpenIDConnectAuthenticator implement
             Map<String, Object> jsonObject = JSONUtils.parseJSON(userData);
             for (Map.Entry<String, Object> data : jsonObject.entrySet()) {
                 String key = data.getKey();
-                claims.put(ClaimMapping.build(key, key, null, false), jsonObject.get(key).toString());
+                claims.put(ClaimMapping.build(InstagramAuthenticatorConstants.CLAIM_DIALECT_URI + "/" + key,
+                        InstagramAuthenticatorConstants.CLAIM_DIALECT_URI + "/" + key, null, false),
+                        jsonObject.get(key).toString());
                 if (log.isDebugEnabled()) {
                     log.debug("Adding claims from end-point data mapping : " + key + " - " +
                             jsonObject.get(key).toString());
@@ -283,6 +285,16 @@ public class InstagramAuthenticator extends OpenIDConnectAuthenticator implement
             }
             return builder.toString();
         }
+    }
+
+    /**
+     * Get the Instagram specific claim dialect URI.
+     *
+     * @return Claim dialect URI.
+     */
+    @Override
+    public String getClaimDialectURI() {
+        return InstagramAuthenticatorConstants.CLAIM_DIALECT_URI;
     }
 
     /**
