@@ -18,12 +18,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.wso2.carbon.extension.identity.authenticator</groupId>
-        <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram</artifactId>
+        <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
+        <artifactId>identity-outbound-auth-instagram</artifactId>
         <version>1.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.wso2.carbon.extension.identity.authenticator</groupId>    
     <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram.feature</artifactId>
     <packaging>pom</packaging>
     <name>WSO2 Carbon - identity Instagram OTP Feature</name>
@@ -32,9 +31,9 @@
 
     <dependencies>
         <dependency>
-	    <groupId>org.wso2.carbon.extension.identity.authenticator</groupId>
-	    <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram.connector</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
+            <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram.connector</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -61,7 +60,7 @@
                                 </properties>
                             </adviceFile>
                             <bundles>
-                                <bundleDef>org.wso2.carbon.extension.identity.authenticator:org.wso2.carbon.extension.identity.authenticator.instagram.connector</bundleDef>
+                                <bundleDef>org.wso2.carbon.extension.identity.authenticator.outbound.instagram:org.wso2.carbon.extension.identity.authenticator.instagram.connector</bundleDef>
                             </bundles>
                         </configuration>
                     </execution>
