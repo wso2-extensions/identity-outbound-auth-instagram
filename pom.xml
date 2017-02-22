@@ -25,8 +25,8 @@
         <version>1</version>
     </parent>
 
-    <groupId>org.wso2.carbon.extension.identity.authenticator</groupId>
-    <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram</artifactId>
+    <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
+    <artifactId>identity-outbound-auth-instagram</artifactId>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WSO2 Carbon Extension - Instagram Pom</name>
@@ -56,7 +56,7 @@
             <artifactId>org.wso2.carbon.logging</artifactId>
             <version>${commons-logging.version}</version>
         </dependency>
-        <dependency>   
+        <dependency>
             <groupId>org.wso2.carbon.identity</groupId>
             <artifactId>org.wso2.carbon.identity.application.common</artifactId>
             <version>${carbon.identity.version}</version>
