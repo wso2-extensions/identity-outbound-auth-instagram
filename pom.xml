@@ -27,7 +27,7 @@
 
     <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
     <artifactId>identity-outbound-auth-instagram</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>WSO2 Carbon Extension - Instagram Pom</name>
     <url>http://wso2.org</url>
