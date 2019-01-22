@@ -17,7 +17,7 @@ This is tested with the Instagram API version 1.0 (v1). Instagram authenticator 
 * [Configuring the identity provider](#Configuring-the-identity-provider)
 * [Configuring the service provider](#Configuring-the-service-provider)
 * [Configuring claims](#Configuring-claims)
-* [Configuring requested claims for travelocity.com](#Configuring-requested claims-for-travelocity.com)
+* [Configuring requested claims for travelocity.com](#Configuring-requested-claims-for-travelocity.com)
 * [Testing the sample](#Testing-the-sample)
 
 ## Deploying Instagram artifacts
