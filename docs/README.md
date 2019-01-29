@@ -24,10 +24,10 @@ This is tested with the Instagram API version 1.0 (v1). Instagram authenticator 
 
 * Either Download the artifacts for this authenticator from [the store](https://store.wso2.com/store/assets/isconnector/details/175db9b2-1aae-4402-adee-94c4acd751d2) or [build the project](Building From the Source) to get the jar and by adding it in the <IS-Home>/repository/components/dropins directory.
 
-* If you want to upgrade the Github Authenticator (.jar) in your existing IS pack, follow the bellow instructions.
+* If you want to upgrade the Instagram Authenticator (.jar) in your existing IS pack, follow the bellow instructions.
   * Stop WSO2 Identity Server if the server is already running.
-  * Download and extract the latest version of the connector artifacts (.jar, .war, gadgets etc.,) from the connector store.
-  * Replace the old .jar file found in the <IS_HOME>/repository/components/dropins folder with the new .jar file that you downloaded.
+  * Download and extract the latest version of the authenticator artifacts (.jar, .war, gadgets etc.,) from the connector store.
+  * Replace the old .jar file(org.wso2.carbon.extension.identity.authenticator.instagram.connector-x.x.x.jar) found in the <IS_HOME>/repository/components/dropins folder with the new .jar file that you downloaded.
   
 ## Building From the Source
 
@@ -139,7 +139,7 @@ Now you have to configure WSO2 Identity Server by [adding a new identity provide
  
     Do the following configurations.
     
-    |Field|Description|SAmple value|
+    |Field|Description|Sample value|
     |----|----|----|
     |Enable|Selecting this option enables Instagram to be used as an authenticator for users provisioned to the Identity Server.|Selected|
     |Default|Selecting the 'Default' checkbox signifies that Instagram is the main/default form of authentication. This removes the selection made for any other 'Default' checkboxes for other authenticators.|Selected|
