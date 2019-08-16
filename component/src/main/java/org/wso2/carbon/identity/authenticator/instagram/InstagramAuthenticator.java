@@ -60,7 +60,7 @@ import java.util.*;
 public class InstagramAuthenticator extends OpenIDConnectAuthenticator implements FederatedApplicationAuthenticator {
 
     private static final long serialVersionUID = -1179165995021182755L;
-    private static Log log = LogFactory.getLog(InstagramAuthenticator.class);
+    private static final Log log = LogFactory.getLog(InstagramAuthenticator.class);
 
     /**
      * Get Instagram authorization endpoint

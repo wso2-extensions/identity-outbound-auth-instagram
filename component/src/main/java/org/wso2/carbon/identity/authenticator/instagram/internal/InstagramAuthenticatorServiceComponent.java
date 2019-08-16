@@ -32,7 +32,7 @@ import java.util.Hashtable;
  */
 public class InstagramAuthenticatorServiceComponent {
 
-    private static Log log = LogFactory.getLog(InstagramAuthenticatorServiceComponent.class);
+    private static final Log log = LogFactory.getLog(InstagramAuthenticatorServiceComponent.class);
 
     protected void activate(ComponentContext ctxt) {
         try {
