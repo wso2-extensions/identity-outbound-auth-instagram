@@ -178,10 +178,8 @@ public class InstagramAuthenticator extends OpenIDConnectAuthenticator implement
             }
             context.setProperty(OIDCAuthenticatorConstants.ACCESS_TOKEN, accessToken);
             AuthenticatedUser authenticatedUserObj = AuthenticatedUser
-                    .createFederateAuthenticatedUserFromSubjectIdentifier(JSONUtils.parseJSON(userObj)
-                            .get(InstagramAuthenticatorConstants.INSTAGRAM_USERNAME).toString());
-            authenticatedUserObj.setAuthenticatedSubjectIdentifier(JSONUtils.parseJSON(userObj)
-                    .get(InstagramAuthenticatorConstants.INSTAGRAM_USERNAME).toString());
+                    .createFederateAuthenticatedUserFromSubjectIdentifier(userObj);
+            authenticatedUserObj.setAuthenticatedSubjectIdentifier(userObj);
             Map<ClaimMapping, String> claims = getSubjectAttributes(oAuthResponse, authenticatorProperties);
             authenticatedUserObj.setUserAttributes(claims);
             context.setSubject(authenticatedUserObj);
@@ -206,14 +204,13 @@ public class InstagramAuthenticator extends OpenIDConnectAuthenticator implement
             String url = getUserInfoEndpoint(userObj, authenticatorProperties);
             String json = sendRequest(url, accessToken);
             JSONObject obj = new JSONObject(json);
-            String userData = obj.getJSONObject("data").toString();
             if (StringUtils.isBlank(json)) {
                 if (log.isDebugEnabled()) {
                     log.debug("Unable to fetch user claims. Proceeding without user claims");
                 }
                 return claims;
             }
-            Map<String, Object> jsonObject = JSONUtils.parseJSON(userData);
+            Map<String, Object> jsonObject = JSONUtils.parseJSON(json);
             for (Map.Entry<String, Object> data : jsonObject.entrySet()) {
                 String key = data.getKey();
                 claims.put(ClaimMapping.build(InstagramAuthenticatorConstants.CLAIM_DIALECT_URI + "/" + key,

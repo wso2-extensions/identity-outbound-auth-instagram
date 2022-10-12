@@ -23,14 +23,13 @@ public class InstagramAuthenticatorConstants {
 
     public static final String INSTAGRAM_OAUTH_ENDPOINT = "https://api.instagram.com/oauth/authorize/";
     public static final String INSTAGRAM_TOKEN_ENDPOINT = "https://api.instagram.com/oauth/access_token";
-    public static final String INSTAGRAM_USERINFO_ENDPOINT = "https://api.instagram.com/v1/users/self";
+    public static final String INSTAGRAM_USERINFO_ENDPOINT = "https://graph.instagram.com/me";
 
     public static final String INSTAGRAM_CONNECTOR_FRIENDLY_NAME = "Instagram ";
     public static final String INSTAGRAM_CONNECTOR_NAME = "Instagram";
 
     public static final String HTTP_GET_METHOD = "GET";
-    public static final String INSTAGRAM_USERNAME = "username";
-    public static final String INSTAGRAM_USER = "user";
-    public static final String INSTAGRAM_BASIC_SCOPE = "basic";
+    public static final String INSTAGRAM_USER = "user_id";
+    public static final String INSTAGRAM_BASIC_SCOPE = "user_profile,user_media";
     public static final String CLAIM_DIALECT_URI = "http://wso2.org/instagram/claims";
 }
