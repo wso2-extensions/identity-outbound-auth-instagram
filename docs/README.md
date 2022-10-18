@@ -47,86 +47,29 @@ Follow the steps given below to build the Instagrqam authenticator from the sour
 
 4. Navigate to https://www.instagram.com/ and log in using the credentials that you used to create the account.
 
-5. Navigate to https://www.instagram.com/developer/ and click the `Register Your Application` button and register a new client.
+5. Go to https://developers.facebook.com and select My Apps from the top menu bar and Create Application. You can provide the status as Consumer or none.
+ 
+6. Click ‘Add products’ under the Product, select Instagram Basic Display.
+ 
+7. Select ‘Create New App’ and provide a name for the application.
+ 
+8. In the resulting window, enter `https://localhost:9443/commonauth` as Valid OAuth Redirect URI, Deauthorize callback URL and Data Deletion Request URL and click save.
 
-6. Use  https://localhost:9443/commonauth  as the redirect URL when you register the client.
-![2](images/regClient.png "regClieant.png")
-    ```
-    If you are getting an error while registering you may have to "Disable Content Security Policy". It is recommended to enable content security policy, once you registered into the app.
-    ```
-    
-7. From the app dashboard you can get the `clientId` and `clientSecret` for your created app. 
+  Please save the Instagram App ID and Instagram App Secret for later use.
+ 
+9. Select ‘Roles’ under Roles and add an instagram test user by providing the user’s instagram username.
+Users can accept the invitation from the [Apps and websites](https://www.instagram.com/accounts/manage_access) section in their account. 
 
 ## Deploying travelocity.com sample app
 
-To ensure you get the full understanding of configuring authenticator with WSO2 IS, the sample travelocity application is used in this use case. The samples run on the Apache Tomcat server and are written based on Servlet 3.0. Therefore, download Tomcat 7.x from [here](https://tomcat.apache.org/download-70.cgi).
-Install Apache Maven to build the samples. For more information, see [Installation Prerequisites](https://docs.wso2.com/display/IS570/Installation+Prerequisites).
-
-Follow the steps below to deploy the travelocity.com sample application:
-
-### Download the samples
-
-To be able to deploy a sample of Identity Server, you need to download it onto your machine first. 
-
-Follow the instructions below to download a sample from GitHub.
-
-* Create a folder in your local machine and navigate to it using your command line.
-
-* Run the following commands.
-  ```
-  mkdir is-samples
-  cd is-samples/
-  git init
-  git remote add -f origin https://github.com/wso2/product-is.git
-  git config core.sparseCheckout true
-  ```
-  
-* Navigate into the .git/info/ directory and list out the folders/files you want to check out using the echo command below.
-    ``` 
-    cd .git
-    cd info
-    echo "modules/samples/" >> sparse-checkout
-    ```
-    
-* Navigate out of .git/info directory and checkout the v5.4.0 tag to update the empty repository with the remote one.
-    ```
-    cd ..
-    cd ..
-    git checkout -b v5.4.0 v5.4.0
-    ```
-* Go to is-samples/modules/samples/sso/sso-agent-sample directory and run `mvn clean install` and get the war file from the target folder.
-
-### Deploy the sample web app
-
-Deploy this sample web app on a web container.
-
-1. Use the Apache Tomcat server to do this. If you have not downloaded Apache Tomcat already, download it from [here](https://tomcat.apache.org/download-70.cgi).
-
-2. Copy the .war file into the  webapps  folder. For example,  <TOMCAT_HOME>/apache-tomcat-<version>/webapps .
-
-3. Start the Tomcat server. 
-
-    To check the sample application, navigate to http://<TOMCAT_HOST>:<TOMCAT_PORT>/travelocity.com/index.jsp on your browser.
-    For example, `http://localhost:8080/travelocity.com/index.jsp.`
-    ```
-    Note: It is recommended that you use a hostname that is not localhost to avoid browser errors. Modify the /etc/hosts entry in your machine to reflect this. Note that localhost is used throughout thisdocumentation as an example, but you must modify this when configuring these authenticators or connectors with this sample application.
-    ```
-    
-Once this is done, the next step is to configure the WSO2 Identity Server by adding an identity provider and service provider.
-
+The next step is to deploy the travelocity.com sample app in order to use it in this scenario.
+To configure this, see [deploying travelocity.com sample app](https://is.docs.wso2.com/en/5.9.0/learn/deploying-the-sample-app/#deploying-the-travelocity-webapp).
+ 
 ## Configuring the identity provider
 
 Now you have to configure WSO2 Identity Server by [adding a new identity provider](https://docs.wso2.com/display/IS570/Adding+and+Configuring+an+Identity+Provider).
 
 * Download the WSO2 Identity Server from [here](http://wso2.com/products/identity-server/).
-
-* Go to https://api.instagram.com in your browser, and then click the HTTPS trust icon on the address bar (e.g., the padlock next to the URL) to download the certificate. If you are using google chrome please follow the steps of inspecting certificates in chrome to export the certificate.
-
-* Import that certificate into the IS client keystore by running the following command on your command line.
-
-    `keytool -importcert -file <certificate file> -keystore <IS_HOME>/repository/resources/security/client-truststore.jks -alias "Instagram"`
-
-  Note that 'wso2carbon' is the keystore password of the default client-truststore.jks file. We need the certificate in order to validate the signature. Otherwise, it is unable to prove that the response is sent by the relevant identity provider we configured.
 
 * Run the [WSO2 Identity Server](https://docs.wso2.com/display/IS570/Running+the+Product).
 
@@ -192,39 +135,7 @@ You have now added and configured the service provider.
 Related Topics
 For more information on service provider configuration, see https://docs.wso2.com/display/IS570/Configuring+Single+Sign-On.
 ```
-
-## Configuring claims
-
-This involves adding a new [claim mapping](https://docs.wso2.com/display/IS570/Adding+Claim+Mapping) for various user attributes related to Instagram.
-
-* In the `Main` menu, click `Add` under `Claims`.
-
-* Click `Add New Claim Dialect` to create the Instagram authenticator specific claim dialect.
-  ![7](images/Selection_001.png "Selection_001.png")
-  
-* Specify the Dialect Uri as `http://wso2.org/instagram/claims` and create claims. It is required to create at least one claim under this new dialect. Therefore, create the claim for the Instagram user ID while creating the claim dialect. Enter the following values the form.
-
-* Click `Add` to add the new claim.
-
-* Similarly, you can create claims for all the public information of the Instagram user. Add the following claims under the dialect `http://wso2.org/instagram/claims`
-    ![8](images/Selection_002.png "Selection_002.png")
-    
-    ![9](images/Selection_003.png "Selection_003.png")
-    
-* You can create the local claim to map it with the Instagram claim. Create the local claim `http://wso2.org/claims/profilepicture`  with the map attribute `profile picture`.
-    ![10](images/Selection_004.png "Selection_004.png")
-    
-## Configuring requested claims for travelocity.com
-
-* In the `Identity` section under the `Main` tab, click `List` under `Service Providers`.
-
-* Click `Edit` to edit the travelocity.com service provider.
-
-* Expand the `Claim Configuration` section.
-
-* Click on Add `Claim URI` under `Requested Claims` to add the requested claims as indicated in the image below. Here you must add the claims you mapped in the Identity Provider claim configuration.
-    ![11](images/Selection_005.png "Selection_005.png")
-    
+ 
 ## Testing the sample
 
 1. To test the sample, go to the following URL: http://<TOMCAT_HOST>:<TOMCAT_PORT>/travelocity.com/index.jsp. E.g., http://localhost:8080/travelocity.com
