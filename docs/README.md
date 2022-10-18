@@ -50,8 +50,10 @@ Follow the steps given below to build the Instagrqam authenticator from the sour
 5. Go to https://developers.facebook.com and select My Apps from the top menu bar and Create Application. You can provide the status as Consumer or none.
  
 6. Click ‘Add products’ under the Product, select Instagram Basic Display.
+![2](images/product_setup.png "product_setup.png")
  
 7. Select ‘Create New App’ and provide a name for the application.
+![3](images/new_application.png "new_application.png")
  
 8. In the resulting window, enter `https://localhost:9443/commonauth` as Valid OAuth Redirect URI, Deauthorize callback URL and Data Deletion Request URL and click save.
 
@@ -59,6 +61,7 @@ Follow the steps given below to build the Instagrqam authenticator from the sour
  
 9. Select ‘Roles’ under Roles and add an instagram test user by providing the user’s instagram username.
 Users can accept the invitation from the [Apps and websites](https://www.instagram.com/accounts/manage_access) section in their account. 
+![4](images/test_user.png "test_user.png")
 
 ## Deploying travelocity.com sample app
 
@@ -78,7 +81,7 @@ Now you have to configure WSO2 Identity Server by [adding a new identity provide
 * In the `Identity Providers` section under the `Main` tab of the management console, click `Add`.
 
 * Give a suitable name for `Identity Provider` Name and configure the authenticator. To do this, navigate to `Instagram Configuration` under `Federated Authenticators` and fill the form.
-    ![3](images/instagramIDP.png "instagramIDP.png")
+    ![5](images/instagramIDP.png "instagramIDP.png")
  
     Do the following configurations.
     
@@ -118,14 +121,14 @@ The next step is to configure the service provider.
     3. Enable Attribute Profile.
     4. Include Attributes in the Response Always.
 
-   ![5](images/Travelocity-Service-Provider.png "Travelocity-Service-Provider.png")
+   ![6](images/Travelocity-Service-Provider.png "Travelocity-Service-Provider.png")
    
 7. Click `Update` to save the changes. Now you will be sent back to the `Service Providers` page.
 
 8. Navigate to the Local and `Outbound Authentication Configuration` section.
  
 9. Select the identity provider you created from the drop-down list under `Federated Authentication`.
-![6](images/addFederated.png "addFederated.png")
+![7](images/addFederated.png "addFederated.png")
 
 10. Ensure that the `Federated Authentication` radio button is selected and click  `Update` to save the changes. 
 
@@ -141,11 +144,10 @@ For more information on service provider configuration, see https://docs.wso2.co
 1. To test the sample, go to the following URL: http://<TOMCAT_HOST>:<TOMCAT_PORT>/travelocity.com/index.jsp. E.g., http://localhost:8080/travelocity.com
 
 2. Login with SAML from the WSO2 Identity Server.
-![12](images/Travelocity.jpeg "Travelocity.jpeg")
+![8](images/Travelocity.jpeg "Travelocity.jpeg")
 
-    If you checkout from tag v5.7.0 when you downloading the sample then login with SAML(Redirect binding).
-    ![13](images/travelocity5.7.0.png "Travelocity5.7.0.png")
+    ![9](images/travelocity5.7.0.png "Travelocity5.7.0.png")
     
 3. Enter your Instagram credentials in the prompted login page of Instagram. Once you login successfully you will be taken to the home page of the travelocity.com app.
-    ![14](images/Selection_006.png "Selection_006.png")
+    ![10](images/sample_app.png "sample_app.png")
     
