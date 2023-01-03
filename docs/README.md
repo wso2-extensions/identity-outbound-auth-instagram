@@ -59,7 +59,7 @@ Follow the steps given below to build the Instagrqam authenticator from the sour
 
   Please save the Instagram App ID and Instagram App Secret for later use.
  
-9. Select ‘Roles’ under Roles and add an instagram test user by providing the user’s instagram username.
+9. Select ‘Roles’ under App Roles and add an instagram test user by providing the user’s instagram username.
 Users can accept the invitation from the [Apps and websites](https://www.instagram.com/accounts/manage_access) section in their account. 
 ![4](images/test_user.png "test_user.png")
 
@@ -89,8 +89,8 @@ Now you have to configure WSO2 Identity Server by [adding a new identity provide
     |----|----|----|
     |Enable|Selecting this option enables Instagram to be used as an authenticator for users provisioned to the Identity Server.|Selected|
     |Default|Selecting the 'Default' checkbox signifies that Instagram is the main/default form of authentication. This removes the selection made for any other 'Default' checkboxes for other authenticators.|Selected|
-    |Client Id|This is the username from the Instagram application.|aa6f12fd086e4b58a6707d5b61377a71|
-    |Client Secret|This is the password from the Instagram application. Click the Show button to view the value you enter.|fffc3f4808f34e01b0bc529ce78f5980|
+    |Client Id|This is the `Instagram App ID` of the Instagram application.|aa6f12fd086e4b58a6707d5b61377a71|
+    |Client Secret|This is the `Instagram App Secret` of the created Instagram application. Click the Show button to view the value you enter.|fffc3f4808f34e01b0bc529ce78f5980|
     |Callback URL|This is the URL to which the browser should be redirected after the authentication is successful. It should have this format: https://(host-name):(port)/acs.|https://localhost:9443/commonauth|
     
 * Select both checkboxes to `Enable` the Instagram authenticator and make it the `Default`.
