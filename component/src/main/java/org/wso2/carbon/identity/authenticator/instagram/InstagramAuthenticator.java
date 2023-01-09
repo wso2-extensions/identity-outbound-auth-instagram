@@ -192,8 +192,8 @@ public class InstagramAuthenticator extends OpenIDConnectAuthenticator implement
      * Get subject attributes.
      *
      * @param userObj                 OAuthClientResponse
-     * @param authenticatorProperties Map<String, String>
-     * @return Map<ClaimMapping, String> Claim mappings.
+     * @param authenticatorProperties Authenticator Properties
+     * @return Claim mappings.
      */
     @Override
     protected Map<ClaimMapping, String> getSubjectAttributes(OAuthClientResponse userObj,
