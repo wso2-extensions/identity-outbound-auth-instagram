@@ -22,18 +22,22 @@ package org.wso2.carbon.identity.authenticator.instagram.internal;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osgi.service.component.ComponentContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
 import org.wso2.carbon.identity.application.authentication.framework.ApplicationAuthenticator;
 import org.wso2.carbon.identity.authenticator.instagram.InstagramAuthenticator;
 
 import java.util.Hashtable;
 
-/**
- * @scr.component name="identity.application.authenticator.Instagram.component" immediate="true"
- */
+@Component(
+        name = "identity.application.authenticator.Instagram.component",
+        immediate= true)
 public class InstagramAuthenticatorServiceComponent {
 
     private static final Log log = LogFactory.getLog(InstagramAuthenticatorServiceComponent.class);
 
+    @Activate
     protected void activate(ComponentContext ctxt) {
         try {
             InstagramAuthenticator authenticator = new InstagramAuthenticator();
@@ -48,6 +52,7 @@ public class InstagramAuthenticatorServiceComponent {
         }
     }
 
+    @Deactivate
     protected void deactivate(ComponentContext ctxt) {
         if (log.isDebugEnabled()) {
             log.debug("Instagram authenticator is deactivated");
