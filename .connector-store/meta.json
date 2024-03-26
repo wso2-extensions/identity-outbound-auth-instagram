@@ -1,0 +1,12 @@
+{
+    "name": "Instagram",
+    "owner": "WSO2",
+    "category": "Federated authenticator",
+    "documentationUrl": "https://github.com/wso2-extensions/identity-outbound-auth-instagram/blob/master/docs/README.md ",
+    "description": "The Instagram authenticator allows you to authenticate a user using Instagram through the WSO2 Identity Server. Instagram is an online mobile photo-sharing, video-sharing, and social networking service. This enables its users to take pictures and videos, and share them on a variety of social networking platforms.",
+    "status": "Active",
+    "labels": [
+        "SocialLogin"
+    ],
+    "releases": []
+}
