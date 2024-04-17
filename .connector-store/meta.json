@@ -8,5 +8,12 @@
     "labels": [
         "SocialLogin"
     ],
-    "releases": []
+    "releases": [
+        {
+            "tagName": "1.0.3",
+            "products": [
+                "IS 6.0.0"
+            ]
+        }
+    ]
 }
