@@ -18,14 +18,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
-        <artifactId>identity-outbound-auth-instagram</artifactId>
+        <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.daon</groupId>
+        <artifactId>identity-outbound-auth-daon</artifactId>
         <version>1.0.4-SNAPSHOT</version>
     </parent>
 
-    <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram.connector</artifactId>
+    <artifactId>org.wso2.carbon.extension.identity.authenticator.daon.connector</artifactId>
     <packaging>bundle</packaging>
-    <name>WSO2 Carbon - Authenticator Library For Instagram</name>
+    <name>WSO2 Carbon - Authenticator Library For Daon</name>
     <url>http://wso2.org</url>
 
     <build>
@@ -35,8 +35,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -47,19 +47,25 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
-                        <Private-Package>org.wso2.carbon.identity.authenticator.internal</Private-Package>
+                        <Private-Package>org.wso2.carbon.identity.authenticator.daon.internal</Private-Package>
                         <Import-Package>
+                            org.apache.commons.lang.*;resolution:=optional,
                             org.apache.commons.logging.*; version="1.0.4",
                             org.osgi.framework,
+                            org.osgi.service.component.annotations.*; resolution:=optional,
                             org.wso2.carbon.identity.application.authentication.framework.*,
-                            javax.servlet,
-                            javax.servlet.http,
+                            org.wso2.carbon.identity.application.authenticator.oidc.*,
+                            org.wso2.carbon.identity.flow.execution.engine.*,
+                            org.wso2.carbon.identity.core.util.*,
+                            org.wso2.carbon.extension.identity.verification.mgt.*; resolution:=optional,
+                            javax.servlet; version="${imp.pkg.version.javax.servlet}",
+                            javax.servlet.http; version="${imp.pkg.version.javax.servlet}",
                             org.apache.oltu.oauth2.*; version="${oltu.package.import.version.range}",
-                            *;resolution:=optional
+                            org.json; version="${json.wso2.version.range}",
                         </Import-Package>
                         <Export-Package>
-                            !org.wso2.carbon.identity.authenticator.internal,
-                            org.wso2.carbon.identity.authenticator.*
+                            !org.wso2.carbon.identity.authenticator.daon.internal,
+                            org.wso2.carbon.identity.authenticator.daon.*
                         </Export-Package>
                     </instructions>
                 </configuration>
@@ -71,6 +77,20 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
             <version>${apache.felix.scr.ds.annotations.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.identity.framework</groupId>
+            <artifactId>org.wso2.carbon.identity.flow.execution.engine</artifactId>
+            <version>${carbon.identity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.extension.identity.verification</groupId>
+            <artifactId>org.wso2.carbon.extension.identity.verification.mgt</artifactId>
+            <version>${identity.verification.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
         </dependency>
     </dependencies>
 </project>

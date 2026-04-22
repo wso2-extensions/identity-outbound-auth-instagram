@@ -18,21 +18,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
-        <artifactId>identity-outbound-auth-instagram</artifactId>
+        <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.daon</groupId>
+        <artifactId>identity-outbound-auth-daon</artifactId>
         <version>1.0.4-SNAPSHOT</version>
     </parent>
 
-    <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram.feature</artifactId>
+    <artifactId>org.wso2.carbon.extension.identity.authenticator.daon.feature</artifactId>
     <packaging>pom</packaging>
-    <name>WSO2 Carbon - identity Instagram OTP Feature</name>
+    <name>WSO2 Carbon - identity Daon OTP Feature</name>
     <url>http://wso2.org</url>
-    <description>This feature contains extension feature for Instagram</description>
+    <description>This feature contains extension feature for Daon</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.instagram</groupId>
-            <artifactId>org.wso2.carbon.extension.identity.authenticator.instagram.connector</artifactId>
+            <groupId>org.wso2.carbon.extension.identity.authenticator.outbound.daon</groupId>
+            <artifactId>org.wso2.carbon.extension.identity.authenticator.daon.connector</artifactId>
             <version>1.0.4-SNAPSHOT</version>
         </dependency>
     </dependencies>
@@ -51,7 +51,7 @@
                             <goal>p2-feature-gen</goal>
                         </goals>
                         <configuration>
-                            <id>org.wso2.carbon.extension.identity.authenticator.instagram.connector</id>
+                            <id>org.wso2.carbon.extension.identity.authenticator.daon.connector</id>
                             <propertiesFile>feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>
@@ -60,7 +60,7 @@
                                 </properties>
                             </adviceFile>
                             <bundles>
-                                <bundleDef>org.wso2.carbon.extension.identity.authenticator.outbound.instagram:org.wso2.carbon.extension.identity.authenticator.instagram.connector</bundleDef>
+                                <bundleDef>org.wso2.carbon.extension.identity.authenticator.outbound.daon:org.wso2.carbon.extension.identity.authenticator.daon.connector</bundleDef>
                             </bundles>
                         </configuration>
                     </execution>

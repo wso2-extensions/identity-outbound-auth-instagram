@@ -1,18 +1,18 @@
-# Instagram Authenticator
+# Daon Authenticator
 
-The Instagram authenticator is configured as a federated authenticator in WSO2 Identity Server to authenticate Instagram users to log in to your organization’s applications. Instagram is an online mobile photo-sharing, video-sharing, and social networking service. This enables its users to take pictures and videos, and share them on a variety of social networking platforms.
+The Daon authenticator is configured as a federated authenticator in WSO2 Identity Server to authenticate Daon users to log in to your organization's applications.
 
-The diagram below illustrates the flow of the Instagram federated authenticator.
+The diagram below illustrates the flow of the Daon federated authenticator.
 ![1](images/instagram.png "instagram.png")
 
-This page provides instructions on how to configure the Instagram authenticator and Identity Server using a sample app. You can find more information in the following sections.
+This page provides instructions on how to configure the Daon authenticator and Identity Server using a sample app. You can find more information in the following sections.
 
 ```
-This is tested with the Instagram API version 1.0 (v1). Instagram authenticator is supported by Identity Server 5.1.0 upwards.
+This is tested with the Daon API version 1.0 (v1). Daon authenticator is supported by Identity Server 5.1.0 upwards.
 ```
 
-* [Deploying Instagram artifacts](#Deploying-Instagram-artifacts)
-* [Configuring the Instagram App](#Configuring-the-Instagram-App)
+* [Deploying Daon artifacts](#Deploying-Daon-artifacts)
+* [Configuring the Daon App](#Configuring-the-Daon-App)
 * [Deploying travelocity.com sample app](#Deploying-travelocity.com-sample-app)
 * [Configuring the identity provider](#Configuring-the-identity-provider)
 * [Configuring the service provider](#Configuring-the-service-provider)
@@ -20,36 +20,36 @@ This is tested with the Instagram API version 1.0 (v1). Instagram authenticator 
 * [Configuring requested claims for travelocity.com](#Configuring-requested-claims-for-travelocity.com)
 * [Testing the sample](#Testing-the-sample)
 
-## Deploying Instagram artifacts
+## Deploying Daon artifacts
 
 * Either Download the artifacts for this authenticator from [the store](https://store.wso2.com/store/assets/isconnector/details/175db9b2-1aae-4402-adee-94c4acd751d2) or [build the project](Building From the Source) to get the jar and by adding it in the <IS-Home>/repository/components/dropins directory.
 
-* If you want to upgrade the Instagram Authenticator (.jar) in your existing IS pack, follow the bellow instructions.
+* If you want to upgrade the Daon Authenticator (.jar) in your existing IS pack, follow the bellow instructions.
   * Stop WSO2 Identity Server if the server is already running.
   * Download and extract the latest version of the authenticator artifacts (.jar, .war, gadgets etc.,) from the connector store.
-  * Replace the old .jar file(org.wso2.carbon.extension.identity.authenticator.instagram.connector-x.x.x.jar) found in the <IS_HOME>/repository/components/dropins folder with the new .jar file that you downloaded.
+  * Replace the old .jar file(org.wso2.carbon.extension.identity.authenticator.daon.connector-x.x.x.jar) found in the <IS_HOME>/repository/components/dropins folder with the new .jar file that you downloaded.
   
 ## Building From the Source
 
-Follow the steps given below to build the Instagrqam authenticator from the source code:
+Follow the steps given below to build the Daon authenticator from the source code:
 
-1. Get a clone or download the source from [Github](https://github.com/wso2-extensions/identity-outbound-auth-instagram).
-2. Run the following maven command from the `identity-outbound-auth-instagram` directory: `mvn clean install`.
-3. org.wso2.carbon.extension.identity.authenticator.instagram.connector-x.x.x.jar file is created in the `identity-outbound-auth-instagram/component/target` directory.
+1. Get a clone or download the source from [Github](https://github.com/wso2-extensions/identity-outbound-auth-daon).
+2. Run the following maven command from the `identity-outbound-auth-daon` directory: `mvn clean install`.
+3. org.wso2.carbon.extension.identity.authenticator.daon.connector-x.x.x.jar file is created in the `identity-outbound-auth-daon/component/target` directory.
 
-## Configuring the Instagram App
+## Configuring the Daon App
 
-1. Download the `Instagram` app for iOS from the App Store, Android from Google Play Store or Windows Phone from the Windows Phone Store. 
+1. Download the `Daon` app for iOS from the App Store, Android from Google Play Store or Windows Phone from the Windows Phone Store. 
 
 2. Once the app is installed, tap to open it. 
 
 3. Sign up and create an account using your email ID.
 
-4. Navigate to https://www.instagram.com/ and log in using the credentials that you used to create the account.
+4. Navigate to https://www.daon.com/ and log in using the credentials that you used to create the account.
 
 5. Go to https://developers.facebook.com and select My Apps from the top menu bar and Create Application. You can provide the status as Consumer or none.
  
-6. Click ‘Add products’ under the Product, select Instagram Basic Display.
+6. Click 'Add products' under the Product, select Daon Basic Display.
 ![2](images/product_setup.png "product_setup.png")
  
 7. Select ‘Create New App’ and provide a name for the application.
@@ -57,10 +57,10 @@ Follow the steps given below to build the Instagrqam authenticator from the sour
  
 8. In the resulting window, enter `https://localhost:9443/commonauth` as Valid OAuth Redirect URI, Deauthorize callback URL and Data Deletion Request URL and click save.
 
-  Please save the Instagram App ID and Instagram App Secret for later use.
+  Please save the Daon App ID and Daon App Secret for later use.
  
-9. Select ‘Roles’ under App Roles and add an instagram test user by providing the user’s instagram username.
-Users can accept the invitation from the [Apps and websites](https://www.instagram.com/accounts/manage_access) section in their account. 
+9. Select 'Roles' under App Roles and add a daon test user by providing the user's daon username.
+Users can accept the invitation from the [Apps and websites](https://www.daon.com/accounts/manage_access) section in their account. 
 ![4](images/test_user.png "test_user.png")
 
 ## Deploying travelocity.com sample app
@@ -80,20 +80,20 @@ Now you have to configure WSO2 Identity Server by [adding a new identity provide
 
 * In the `Identity Providers` section under the `Main` tab of the management console, click `Add`.
 
-* Give a suitable name for `Identity Provider` Name and configure the authenticator. To do this, navigate to `Instagram Configuration` under `Federated Authenticators` and fill the form.
+* Give a suitable name for `Identity Provider` Name and configure the authenticator. To do this, navigate to `Daon Configuration` under `Federated Authenticators` and fill the form.
     ![5](images/instagramIDP.png "instagramIDP.png")
  
     Do the following configurations.
     
     |Field|Description|Sample value|
     |----|----|----|
-    |Enable|Selecting this option enables Instagram to be used as an authenticator for users provisioned to the Identity Server.|Selected|
-    |Default|Selecting the 'Default' checkbox signifies that Instagram is the main/default form of authentication. This removes the selection made for any other 'Default' checkboxes for other authenticators.|Selected|
-    |Client Id|This is the `Instagram App ID` of the Instagram application.|aa6f12fd086e4b58a6707d5b61377a71|
-    |Client Secret|This is the `Instagram App Secret` of the created Instagram application. Click the Show button to view the value you enter.|fffc3f4808f34e01b0bc529ce78f5980|
+    |Enable|Selecting this option enables Daon to be used as an authenticator for users provisioned to the Identity Server.|Selected|
+    |Default|Selecting the 'Default' checkbox signifies that Daon is the main/default form of authentication. This removes the selection made for any other 'Default' checkboxes for other authenticators.|Selected|
+    |Client Id|This is the `Daon App ID` of the Daon application.|aa6f12fd086e4b58a6707d5b61377a71|
+    |Client Secret|This is the `Daon App Secret` of the created Daon application. Click the Show button to view the value you enter.|fffc3f4808f34e01b0bc529ce78f5980|
     |Callback URL|This is the URL to which the browser should be redirected after the authentication is successful. It should have this format: https://(host-name):(port)/acs.|https://localhost:9443/commonauth|
     
-* Select both checkboxes to `Enable` the Instagram authenticator and make it the `Default`.
+* Select both checkboxes to `Enable` the Daon authenticator and make it the `Default`.
 
 * Click Register.
 
@@ -148,6 +148,6 @@ For more information on service provider configuration, see https://docs.wso2.co
 
     ![9](images/travelocity5.7.0.png "Travelocity5.7.0.png")
     
-3. Enter your Instagram credentials in the prompted login page of Instagram. Once you login successfully you will be taken to the home page of the travelocity.com app.
+3. Enter your Daon credentials in the prompted login page of Daon. Once you login successfully you will be taken to the home page of the travelocity.com app.
     ![10](images/sample_app.png "sample_app.png")
     

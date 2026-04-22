@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/identity-outbound-auth-daon.iml" filepath="$PROJECT_DIR$/identity-outbound-auth-daon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component/org.wso2.carbon.extension.identity.authenticator.daon.connector.iml" filepath="$PROJECT_DIR$/component/org.wso2.carbon.extension.identity.authenticator.daon.connector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feature/org.wso2.carbon.extension.identity.authenticator.daon.feature.iml" filepath="$PROJECT_DIR$/feature/org.wso2.carbon.extension.identity.authenticator.daon.feature.iml" />
+    </modules>
+  </component>
+</project>

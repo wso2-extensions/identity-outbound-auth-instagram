@@ -1,4 +1,4 @@
-Product: WSO2 IS authenticator for Instagram
+Product: WSO2 IS authenticator for Daon
 Pre-requisites:
 
 - Maven 3.x
@@ -12,9 +12,9 @@ Tested Platform:
 
 Do the following:
 
-1. Navigate to instagram-authenticator/org.wso2.carbon.identity.authenticator.instagram and build.
+1. Navigate to daon-authenticator/org.wso2.carbon.identity.authenticator.daon and build.
 
-2. Place org.wso2.carbon.identity.authenticator.instagram jar into <IS_HOME>/repository/components/dropins.
+2. Place org.wso2.carbon.identity.authenticator.daon jar into <IS_HOME>/repository/components/dropins.
 
 3. Start the IS server and create Identity provider and service provider in IS via the IS console.
 

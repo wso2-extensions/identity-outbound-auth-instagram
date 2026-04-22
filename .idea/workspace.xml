@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08649a6c-6fec-41fc-89c8-a1665ec3d3f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.connector-store/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/.connector-store/meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/component/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/setup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/component/setup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/src/main/java/org/wso2/carbon/identity/authenticator/instagram/InstagramAuthenticator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/src/main/java/org/wso2/carbon/identity/authenticator/instagram/InstagramAuthenticatorConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/src/main/java/org/wso2/carbon/identity/authenticator/instagram/internal/InstagramAuthenticatorServiceComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Selection_001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Selection_002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Selection_003.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Selection_004.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Selection_005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Selection_006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Travelocity-Service-Provider.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/Travelocity.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/addFederated.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/instagramIDP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/new_application.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/product_setup.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/regClient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/sample_app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/test_user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/images/travelocity5.7.0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/feature/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/Users/sadil/Documents/Repos/wso2/identity-outbound-auth-daon" value="3CRihIUUyzZ17QJgH9LTPeHKv7p" />
+    </persistenceIdMap>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3CRihIUUyzZ17QJgH9LTPeHKv7p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/sadil/Documents/Repos/wso2/identity-outbound-auth-daon/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="identity-outbound-auth-daon" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="identity-outbound-auth-daon" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08649a6c-6fec-41fc-89c8-a1665ec3d3f1" name="Changes" comment="" />
+      <created>1776354900758</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776354900758</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/component/src/main/java/org/wso2/carbon/identity/authenticator/daon/DaonAuthenticator.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
