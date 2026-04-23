@@ -52,9 +52,11 @@
                             org.apache.commons.lang.*;resolution:=optional,
                             org.apache.commons.logging.*; version="1.0.4",
                             org.osgi.framework,
+                            org.osgi.service.component,
                             org.osgi.service.component.annotations.*; resolution:=optional,
                             org.wso2.carbon.identity.application.authentication.framework.*,
                             org.wso2.carbon.identity.application.authenticator.oidc.*,
+                            org.wso2.carbon.identity.application.common.*,
                             org.wso2.carbon.identity.flow.execution.engine.*,
                             org.wso2.carbon.identity.core.util.*,
                             org.wso2.carbon.extension.identity.verification.mgt.*; resolution:=optional,
@@ -91,6 +93,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
+            <version>${org.json.version}</version>
         </dependency>
     </dependencies>
 </project>

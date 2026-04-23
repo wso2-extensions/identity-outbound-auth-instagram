@@ -49,4 +49,26 @@ public class DaonAuthenticatorConstants {
     // Daon claim keys inside the "claims" JWT object
     public static final String CLAIM_ADDRESS = "address";
     public static final String CLAIM_ADDRESS_FORMATTED = "formatted";
+
+    // OIDC claims request parameter sent to the Daon authorization endpoint.
+    // Requests all IDV claims inside the id_token using the verified_claims structure.
+    public static final String DAON_CLAIMS_REQUEST_JSON =
+            "{\"id_token\":{\"verified_claims\":{" +
+            "\"verification\":{\"trust_framework\":\"daon-identify-1\"}," +
+            "\"claims\":{" +
+            "\"family_name_and_given_name\":null," +
+            "\"birthdate\":null," +
+            "\"nationality\":null," +
+            "\"nationality_code\":null," +
+            "\"given_name\":null," +
+            "\"family_name\":null," +
+            "\"first_family_name\":null," +
+            "\"second_family_name\":null," +
+            "\"document_type\":null," +
+            "\"document_classification\":null," +
+            "\"document_date_of_expiry\":null," +
+            "\"document_number\":null," +
+            "\"document_personal_number\":null," +
+            "\"address\":null" +
+            "}}}}";
 }

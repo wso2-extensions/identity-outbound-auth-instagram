@@ -87,10 +87,15 @@ public class DaonExecutor extends OpenIDConnectExecutor {
     @Override
     public Map<String, String> getAdditionalQueryParams(Map<String, String> authenticatorProperties) {
 
-        //return authenticatorProperties.get(FrameworkConstants.QUERY_PARAMS);
-        Map<String, String> claimsMap = new HashMap<>();
-        claimsMap.put("claims", "%7B%20%22id_token%22%3A%20%7B%20%22verified_claims%22%3A%20%7B%20%22verification%22%3A%20%7B%20%22trust_framework%22%3A%20%22daon-identify-1%22%20%7D%2C%20%22claims%22%3A%20%7B%20%22family_name_and_given_name%22%3A%20null%2C%20%22birthdate%22%3A%20null%2C%20%22nationality%22%3A%20null%2C%20%22family_name_and_given_name%20%28%2A%29%22%3A%20null%2C%20%22given_name%22%3A%20null%2C%20%22family_name%20%28%2A%29%22%3A%20null%2C%20%22nationality_code%22%3A%20null%2C%20%22family_name%22%3A%20null%2C%20%22given_name%20%28%2A%29%22%3A%20null%2C%20%22first_family_name%20%28%2A%29%22%3A%20null%2C%20%22second_family_name%20%28%2A%29%22%3A%20null%2C%20%22first_family_name%22%3A%20null%2C%20%22second_family_name%22%3A%20null%2C%20%22document_type%22%3A%20null%2C%20%22document_classification%22%3A%20null%2C%20%22document_date_of_expiry%22%3A%20null%2C%20%22document_number%22%3A%20null%2C%20%22document_personal_number%22%3A%20null%2C%20%22address%22%3A%20null%20%7D%20%7D%20%7D%20%7D");
-        return claimsMap;
+        Map<String, String> params = new HashMap<>();
+        try {
+            params.put("claims", java.net.URLEncoder.encode(
+                    DaonAuthenticatorConstants.DAON_CLAIMS_REQUEST_JSON, "UTF-8"));
+        } catch (java.io.UnsupportedEncodingException e) {
+            // UTF-8 is always supported; this branch is unreachable
+            LOG.warn("Failed to URL-encode Daon claims request parameter.", e);
+        }
+        return params;
     }
 
     /**
@@ -155,6 +160,8 @@ public class DaonExecutor extends OpenIDConnectExecutor {
         String userId = flowExecutionContext.getFlowUser() != null
                 ? flowExecutionContext.getFlowUser().getUserId() : null;
         persistIdvClaims(userId, flowExecutionContext.getTenantDomain(), extractedClaims);
+
+        extractedClaims.keySet().forEach(userAttributes::remove);
 
         return userAttributes;
     }
